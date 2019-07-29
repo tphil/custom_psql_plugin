@@ -1,3 +1,4 @@
+---
 version: 0.1
 jpsType: update
 categories:
@@ -49,7 +50,7 @@ actions:
   createUser:
     nodeType: extra
     commands:
-    - ''
+    - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e "INSERT INTO mysql_users (username, password, active, default_hostgroup, max_connections) VALUES ('${settings.username}', '${settings.password}',2, 10, 1000);"
     user: root
   addUser: {}
   removeUser: {}
