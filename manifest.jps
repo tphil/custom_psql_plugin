@@ -5,7 +5,10 @@ categories:
 - apps/dev-tools
 id: proxysqladduser
 targetNodes:
-  nodeGroup: extra
+  nodeGroup: 
+  - extra
+  nodeType:
+  - proxysql
 name: ProxySQL add User
 logo: ProxySQL
 homepage: ProxySQL
