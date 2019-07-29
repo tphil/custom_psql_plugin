@@ -13,19 +13,48 @@ homepage: ProxySQL
 description:
   short: Add users to ProxySQL
 settings:
-  fields:
-  - type: string
-    name: username
-    caption:
-      en: Username
-    required: true
-    placeholder: Username
-  - type: string
-    name: password
-    caption:
-      en: Password
-    required: true
-    placeholder: Current MySQL user Password
+  main:
+    fields:
+    - type: string
+      name: username
+      caption:
+        en: Username
+      required: true
+      placeholder: Username
+    - type: string
+      name: password
+      caption:
+        en: Password
+      required: true
+      placeholder: Current MySQL user Password
+  addConfig:
+    fields:
+    - type: string
+      name: addUsername
+      caption:
+        en: Username
+      required: true
+      placeholder: Username
+    - type: string
+      name: addPassword
+      caption:
+        en: Password
+      required: true
+      placeholder: Current MySQL user Password
+  removeConfig:
+    fields:
+    - type: string
+      name: removeUsername
+      caption:
+       en: Username
+      required: true
+      placeholder: Username
+    - type: string
+      name: removePassword
+      caption:
+        en: Password
+      required: true
+      placeholder: Current MySQL user Password    
 buttons:
 - settings: addConfig
   action: addUser
@@ -35,34 +64,6 @@ buttons:
   action: removeUser
   caption: Remove User
   submitButtonText: Remove User
-addConfig:
-  fields:
-  - type: string
-    name: addUsername
-    caption:
-      en: Username
-    required: true
-    placeholder: Username
-  - type: string
-    name: addPassword
-    caption:
-      en: Password
-    required: true
-    placeholder: Current MySQL user Password
-removeConfig:
-  fields:
-  - type: string
-    name: removeUsername
-    caption:
-      en: Username
-    required: true
-    placeholder: Username
-  - type: string
-    name: removePassword
-    caption:
-      en: Password
-    required: true
-    placeholder: Current MySQL user Password    
 onInstall: createUser
 actions:
   createUser:
