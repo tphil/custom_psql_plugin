@@ -30,7 +30,11 @@ buttons:
 - settings: config
   action: addUser
   caption: Add User
-  submitButtonText: Apply
+  submitButtonText: Add User
+- settings: config
+  action: removeUser
+  caption: Remove User
+  submitButtonText: Remove User
 config:
   fields:
   - type: string
