@@ -3,8 +3,6 @@ version: 0.1
 jpsType: update
 categories:
 - apps/dev-tools
-targetNodes:
-  nodeGroup: proxysql
 id: proxysqladduser
 name: ProxySQL add User
 logo: ProxySQL
