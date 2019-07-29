@@ -1,0 +1,57 @@
+---
+version: 0.1
+jpsType: update
+categories:
+- apps/dev-tools
+targetNodes:
+  nodeGroup:
+  - extra
+id: proxysqladduser
+name: ProxySQL add User
+logo: ProxySQL
+homepage: ProxySQL
+description:
+  short: Add users to ProxySQL
+settings:
+  fields:
+  - type: string
+    name: username
+    caption:
+      en: Username
+    required: true
+    placeholder: Username
+  - type: string
+    name: password
+    caption:
+      en: Password
+    required: true
+    placeholder: Current MySQL user Password
+buttons:
+- settings: config
+  action: addUser
+  caption: Add User
+  submitButtonText: Apply
+config:
+  fields:
+  - type: string
+    name: username
+    caption:
+      en: Username
+    required: true
+    placeholder: Username
+  - type: string
+    name: password
+    caption:
+      en: Password
+    required: true
+    placeholder: Current MySQL user Password
+onInstall: createUser
+actions:
+  createUser:
+    nodeType: extra
+    commands:
+    - ''
+    user: root
+  addUser: {}
+  removeUser: {}
+success: ''
