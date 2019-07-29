@@ -57,13 +57,18 @@ settings:
       placeholder: Current MySQL user Password    
 buttons:
 - settings: addConfig
+  title: Add User
   action: addUser
   caption: Add User
   submitButtonText: Add User
+  successText: Configuration saved successfully!
+  loadingText: Load text while waiting
 - settings: removeConfig
+  title: Remove User
   action: removeUser
   caption: Remove User
   submitButtonText: Remove User
+  successText: Configuration saved successfully!
 onInstall: createUser
 actions:
   createUser:
@@ -84,4 +89,4 @@ actions:
     - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e "DELETE FROM 'mysql_users' WHERE username = '${settings.removeUsername}' AND password = '${settings.removePassword}';"
     - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e "LOAD MYSQL USERS TO RUNTIME; SAVE MYSQL USERS TO DISK;"
     user: root
-success: 'Action completed successfull'
+success: 'ProxySQL users add-on successfully installed'
