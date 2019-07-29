@@ -5,8 +5,6 @@ categories:
 - apps/dev-tools
 id: proxysqladduser
 targetNodes:
-  nodeGroup: 
-  - extra
   nodeType:
   - proxysql
 name: ProxySQL add User
