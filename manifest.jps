@@ -56,12 +56,13 @@ actions:
   addUser:
     nodeType: proxysql
     cmd [proxysql]:
-    - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e "INSERT INTO mysql_users (username, password, active, default_hostgroup, max_connections) VALUES ('${config.username}', '${config.password}', 1, 2, 1000);"
+    - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e "INSERT INTO mysql_users (username, password, active, default_hostgroup, max_connections) VALUES ('${settings.username}', '${settings.password}', 1, 2, 1000);"
     - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e 'LOAD MYSQL USERS TO RUNTIME; SAVE MYSQL USERS TO DISK;'
     user: root
   removeUser:
     nodeType: proxysql
     cmd [proxysql]:
-    - ''
+    - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e "DELETE FROM 'mysql_users' WHERE username = '${settings.username}' AND passsword = '${settings.password}';
+    - mysql -h 127.0.0.1 -P6032 -uadmin -padmin -e 'LOAD MYSQL USERS TO RUNTIME; SAVE MYSQL USERS TO DISK;'
     user: root
 success: ''
