@@ -4,7 +4,7 @@ jpsType: update
 categories:
 - apps/dev-tools
 targetNodes:
-  nodeType: proxysql
+  nodeGroup: proxysql
 id: proxysqladduser
 name: ProxySQL add User
 logo: ProxySQL
