@@ -4,6 +4,8 @@ jpsType: update
 categories:
 - apps/dev-tools
 id: proxysqladduser
+targetNodes:
+  nodeGroup: extra
 name: ProxySQL add User
 logo: ProxySQL
 homepage: ProxySQL
